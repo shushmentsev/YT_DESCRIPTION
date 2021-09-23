@@ -23,7 +23,8 @@ if __name__ == '__main__':
     stickers_url = 'https://t.me/addstickers/HowToDraw'
     video_desc = 'Learn How to draw {} {} '.format(aan, phrase)
     video_desc += 'step by step in 2021\n\n'
-    video_desc += 'Stickers: {}\n\n'.format(stickers_url)
+    video_desc += 'Stickers: {}\n'.format(stickers_url)
+    video_desc += 'Subscribe: https://www.youtube.com/channel/UCViEesNn_sOLV7rBthNlPfw/?sub_confirmation=1\n\n'
     video_desc += '#howtodraw #drawing #{}\n'.format(''.join(list(phrase)))
     video_desc += '2021'
 
