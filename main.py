@@ -1,7 +1,10 @@
 if __name__ == '__main__':
 
-    shorts_flag = False
-
+    # Определяем флаг для Шортс:
+    ans = input('Если видео является Шортс нажмите 1: ')
+    
+    shorts_flag = True if ans == '1' else False
+    
     # Получаем фразу:
     phrase = input('Введите название видео: ').strip()
 
@@ -26,7 +29,31 @@ if __name__ == '__main__':
 
     # Добавление #Shorts к описанию:
     video_desc += ' #Shorts' if shorts_flag else ''
+
+    # Теги:
+    with open('tags.txt', 'r') as lines:
+        
+        # Удаление лишних символов в начале и конце строки из файла:
+        tags = [line.strip() for line in lines]
+
+        # Удаление пустых строк:
+        tags = [line for line in tags if line]
+
+        # TODO: Подставляем правильный артикль
+        # pass
+        
+        # Вставляем фразу:
+        tags = [tag.format(phrase) for tag in tags]
+
+        # Преобразование в строку с разделением запятыми:
+        video_tags = ', '.join(tags)
     
     # Вывод:
-    print('Название видео:', '\n', video_name, '\n')
-    print('Описание видео:', '\n', video_desc, '\n')
+    print('\n')
+    print('Название видео:')
+    print(video_name, '\n')
+    print('Описание видео:')
+    print(video_desc, '\n')
+    print('Тэги:')
+    print(video_tags)
+    
